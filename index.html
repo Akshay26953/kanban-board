@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <style>
+        /* Style for Kanban board */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .kanban-board {
+            display: flex;
+            justify-content: space-between;
+        }
+        .column {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            min-height: 300px;
+        }
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kanban Board</h1>
+    <div class="kanban-board">
+        <div class="column" id="todo">
+            <h2>To Do</h2>
+        </div>
+        <div class="column" id="inProgress">
+            <h2>In Progress</h2>
+        </div>
+        <div class="column" id="done">
+            <h2>Done</h2>
+        </div>
+    </div>
+    <div>
+        <h3>Create a New Task:</h3>
+        <input type="text" id="newTask" placeholder="Task description">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
