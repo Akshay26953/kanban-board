@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
-    <style>
-        /* Style for Kanban board */
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .kanban-board {
-            display: flex;
-            justify-content: space-between;
-        }
-        .column {
-            flex: 1;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            min-height: 300px;
-        }
-        .card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 5px 0;
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Kanban Board</h1>
-    <div class="kanban-board">
-        <div class="column" id="todo">
-            <h2>To Do</h2>
-            <div draggable="true">test1</div>
+    <div class="board">
+      <form id="taskForm">
+        <input
+          type="text"
+          name="task"
+          id="taskAdd"
+          placeholder="Add Task Here..."
+        />
+        <button type="submit">ADD+</button>
+      </form>
+      <div class="columns">
+        <div class="column">
+          <h2>Task To Do</h2>
+          <div class="task" draggable="true">
+            <div class="tag">Least Important</div>
+            <p>Learn Nextjs</p>
+          </div>
+          <div class="task" draggable="true">
+            <div class="tag">In Task</div>
+            <p>Learn HTML and CSS</p>
+          </div>
+          <div class="task" draggable="true">
+            <div class="tag">Very Important</div>
+            <p>Learn Backend</p>
+          </div>
+          <!-- <p class="task" draggable="true">Task 1</p> -->
+          <!-- <p class="task" draggable="true">Task 2</p>
+          <p class="task" draggable="true">Task 3</p>
+          <p class="task" draggable="true">Task 4</p>
+          <p class="task" draggable="true">Task 5</p>
+          <p class="task" draggable="true">Task 6</p> -->
         </div>
-        <div class="column" id="inProgress">
-            <h2>In Progress</h2>
+        <div class="column">
+          <h2>In Process</h2>
         </div>
-        <div class="column" id="done">
-            <h2>Done</h2>
+        <div class="column">
+          <h2>Completed</h2>
         </div>
+      </div>
     </div>
-    <div>
-        <h3>Create a New Task:</h3>
-        <input type="text" id="newTask" placeholder="Task description">
-        <button onclick="addTask()">Add Task</button>
-    </div>
-<script src="index.js"></script>
-</body>
+
+    <script src="drag.js"></script>
+  </body>
 </html>

@@ -1,0 +1,33 @@
+.columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.column {
+    border: 1px solid black;
+    height: fit-content;
+    min-height: 100px;
+    padding: 10px;
+    grid-template-columns: 1fr;
+    display: grid;
+    gap: 5px;
+}
+.task {
+    cursor: move;
+    padding: 5px;
+    background: tan;
+}
+.task > .tag {
+    width: fit-content;
+    background: rgb(211, 42, 70);
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+}
+.task > p{
+margin: 10px 0;
+}
+.dragging {
+    color: red;
+}
